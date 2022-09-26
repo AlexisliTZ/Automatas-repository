@@ -1,0 +1,88 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+/**
+ *
+ * @author Jean Phol - All rights reserved
+ */
+public class MatematicaDiscretaII {
+
+  
+    public static void main(String[] args) {
+        try (Scanner leer = new Scanner (System.in)) {
+            System.out.println("Ingrese la cadena a evaluar: ");
+        String frase=leer.nextLine();
+
+        //5465456
+    
+    //NUMEROS NATURALES    
+    Pattern patron1 = Pattern.compile("[0-9]+");
+    Matcher matcher1 = patron1.matcher(frase); 
+    boolean resultado1 = matcher1.matches();
+    //SON NUMEROS NATURALES
+    
+    
+    //SOLO MAYUSCULAS (NO NUMEROS)
+    Pattern patron2=Pattern.compile("[A-Z]+");
+    Matcher matcher2 = patron2.matcher(frase);
+    boolean resultado2 = matcher2.matches();
+
+    
+    //SOLO MINUSCULAS (NO NUMEROS)
+    Pattern patron3=Pattern.compile("[a-z]+");
+    Matcher matcher3 = patron3.matcher(frase);
+    boolean resultado3 = matcher3.matches();
+
+    
+    //MINUSCULAS Y NUMEROS
+    Pattern patron4=Pattern.compile("[a-z0-9]+");
+    Matcher matcher4 = patron4.matcher(frase);
+    boolean resultado4 = matcher4.matches();
+
+    
+    //MAYUSCULAS Y NUMEROS
+    Pattern patron5=Pattern.compile("[0-9A-Z]+");
+    Matcher matcher5 = patron5.matcher(frase);
+    boolean resultado5 = matcher5.matches();
+    
+    
+    //MAYUSCULAS, MINUSCULAS
+    Pattern patron6=Pattern.compile("[a-zA-Z]+");
+    Matcher matcher6 = patron6.matcher(frase);
+    boolean resultado6 = matcher6.matches();
+    
+    
+    //MAYUSCULAS, MINUSCULAS Y NUMEROS
+    Pattern patron7=Pattern.compile("[A-Za-z0-9]+");
+    Matcher matcher7 = patron7.matcher(frase);
+    boolean resultado7 = matcher7.matches();
+
+    
+    
+    //
+    if(resultado1 == true){
+        System.out.println("Cadena de Numeros Naturales");
+    }
+    if(resultado2 == true){
+        System.out.println("Cadena de Letras Mayusculas");
+    }
+    if(resultado3 == true){
+        System.out.println("Cadena de Letras Minusculas");
+    }
+    if(resultado4 == true){
+        System.out.println("Cadena de Letras Minusculas y Numeros");
+    }
+    if(resultado5 == true){
+        System.out.println("Cadena de Letras Mayusculas y Numeros");
+    }
+    if(resultado6 == true){
+        System.out.println("Cadena de Letras Mayusculas y Minusculas");
+    }
+    if(resultado7 == true){
+        System.out.println("Cadena de Letras Mayusculas, Minusculas y Numeros");
+    }
+    
+    }
+    } 
+}
